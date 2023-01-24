@@ -1362,6 +1362,9 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    gap: 0.625rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
   }
 
   .body-tabs__item-color {
@@ -1384,16 +1387,19 @@ body {
 
   .body-tabs__name {
     width: auto;
+    height: auto;
   }
 
   .body-tabs__version {
     margin-left: 1.625rem;
     width: auto;
+    height: auto;
   }
 
   .body-tabs__data {
     margin-left: 1.625rem;
     width: auto;
+    height: auto;
   }
 
   .body-tabs__down {
@@ -1746,5 +1752,12 @@ body {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     color: #1dbc9b;
+  }
+
+  .sub-sub-menu__link:hover {
+    color: #1dbc9b;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 }
