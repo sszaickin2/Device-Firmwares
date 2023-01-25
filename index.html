@@ -6,18 +6,18 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230124130437">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230125101922">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div data-page class="wrapper">
+	<div class="wrapper">
 		<header class="header">
 			<div class="header__menu menu">
 				<div class="menu__top">
-					<a href="index.html" class="header__logo"><img src="img/logo.svg" alt="" /></a>
+					<a href="index.html" class="header__logo"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" /></picture></a>
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 				</div>
 
@@ -25,7 +25,7 @@
 					<div class="header__title">JetHome Devices</div>
 					<ul class="menu__list">
 						<li class="menu__item">
-							<button class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 1</button>
+							<button data-link="category-1.html" class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 1</button>
 							<ul class="sub-menu__list">
 								<li>
 									<button class="sub-menu__link"><span class="sub-menu__arrow-list _icon-arrow"></span>Linux контроллеры</button>
@@ -71,7 +71,7 @@
 						</li>
 
 						<li class="menu__item">
-							<button class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 2</button>
+							<button data-link="category-2.html" class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 2</button>
 							<ul class="sub-menu__list">
 								<li>
 									<button class="sub-menu__link"><span class="sub-menu__arrow-list _icon-arrow"></span>Linux контроллеры</button>
@@ -117,7 +117,7 @@
 						</li>
 
 						<li class="menu__item">
-							<button class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 3</button>
+							<button data-link="category-3.html" class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 3</button>
 							<ul class="sub-menu__list">
 								<li>
 									<button class="sub-menu__link"><span class="sub-menu__arrow-list _icon-arrow"></span>Linux контроллеры</button>
@@ -163,7 +163,7 @@
 						</li>
 
 						<li class="menu__item">
-							<button class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 4</button>
+							<button data-link="category-4.html" class="menu__link"><span class="menu__arrow _icon-arrow"></span><span class="menu__folder _icon-folder"></span> Category 4</button>
 							<ul class="sub-menu__list">
 								<li>
 									<button class="sub-menu__link"><span class="sub-menu__arrow-list _icon-arrow"></span>Linux контроллеры</button>
@@ -211,7 +211,6 @@
 				</nav>
 
 				<div class="header__menu-company">© 2022 jethome.ru</div>
-
 			</div>
 		</header>
 
@@ -221,7 +220,7 @@
 					<div class="menu-button__title">JetHome Devices</div>
 
 					<div class="menu-button__content content-button">
-						<a href="supported.html" class="content-button__block">
+						<a href="category-1.html" class="content-button__block">
 							<div class="content-button__icons _icon-icon"></div>
 							<div class="content-button__info">
 								<div class="content-button__text">Category 1</div>
@@ -229,7 +228,7 @@
 							</div>
 						</a>
 
-						<a href="#" class="content-button__block">
+						<a href="category-2.html" class="content-button__block">
 							<div class="content-button__icons _icon-icon"></div>
 							<div class="content-button__info">
 								<div class="content-button__text">Category 2</div>
@@ -237,7 +236,7 @@
 							</div>
 						</a>
 
-						<a href="#" class="content-button__block">
+						<a href="category-3.html" class="content-button__block">
 							<div class="content-button__icons _icon-icon"></div>
 							<div class="content-button__info">
 								<div class="content-button__text">Category 3</div>
@@ -245,7 +244,7 @@
 							</div>
 						</a>
 
-						<a href="#" class="content-button__block">
+						<a href="category-4.html" class="content-button__block">
 							<div class="content-button__icons _icon-icon"></div>
 							<div class="content-button__info">
 								<div class="content-button__text">Category 4</div>
@@ -258,7 +257,7 @@
 
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20230124130437"></script>
+	<script src="js/app.min.js?_v=20230125101922"></script>
 </body>
 
 </html>
