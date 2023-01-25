@@ -278,7 +278,8 @@
     const menuHidden = document.querySelector(".menu__body");
     const menuIco = document.querySelector(".menu__icon");
     const menuLink = document.querySelectorAll(".menu__link");
-    if ("index.html" == page) {
+    const dataMenu = document.querySelector("[data-menu-lock]");
+    if (dataMenu) {
         menuHidden.hidden = true;
         menuIco.style.display = "none";
     } else {
