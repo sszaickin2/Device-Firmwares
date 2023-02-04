@@ -172,7 +172,6 @@ body {
   background-color: #ebebeb;
 }
 
-
 [class*=__container] {
   max-width: 89.8125rem;
   -webkit-box-sizing: content-box;
@@ -229,6 +228,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 1.75rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .content-button__block {
@@ -1453,11 +1454,6 @@ body {
 }
 
 @media (max-width: 103.125em) {
-  .menu-button__content {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
   .content-button__block {
     width: auto;
   }

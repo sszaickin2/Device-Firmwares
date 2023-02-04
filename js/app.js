@@ -73,6 +73,45 @@
             }), duration);
         }
     };
+    let bodyLockStatus = true;
+    let bodyLockToggle = (delay = 500) => {
+        if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
+    };
+    let bodyUnlock = (delay = 500) => {
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+            let lock_padding = document.querySelectorAll("[data-lp]");
+            setTimeout((() => {
+                for (let index = 0; index < lock_padding.length; index++) {
+                    const el = lock_padding[index];
+                    el.style.paddingRight = "0px";
+                }
+                body.style.paddingRight = "0px";
+                document.documentElement.classList.remove("lock");
+            }), delay);
+            bodyLockStatus = false;
+            setTimeout((function () {
+                bodyLockStatus = true;
+            }), delay);
+        }
+    };
+    let bodyLock = (delay = 500) => {
+        let body = document.querySelector("body");
+        if (bodyLockStatus) {
+            let lock_padding = document.querySelectorAll("[data-lp]");
+            for (let index = 0; index < lock_padding.length; index++) {
+                const el = lock_padding[index];
+                el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+            }
+            body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+            document.documentElement.classList.add("lock");
+            bodyLockStatus = false;
+            setTimeout((function () {
+                bodyLockStatus = true;
+            }), delay);
+        }
+    };
+
     function tabs() {
         const tabs = document.querySelectorAll("[data-tabs]");
         let tabsActiveHash = [];
@@ -170,13 +209,24 @@
             }
         }
     }
+
+    function menuInit() {
+        if (document.querySelector(".icon-menu")) document.addEventListener("click", (function (e) {
+            if (bodyLockStatus && e.target.closest(".icon-menu")) {
+                bodyLockToggle();
+                document.documentElement.classList.toggle("menu-open");
+            }
+        }));
+    }
+
     function uniqArray(array) {
-        return array.filter((function(item, index, self) {
+        return array.filter((function (item, index, self) {
             return self.indexOf(item) === index;
         }));
     }
+
     function dataMediaQueries(array, dataSetValue) {
-        const media = Array.from(array).filter((function(item, index, self) {
+        const media = Array.from(array).filter((function (item, index, self) {
             if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
         }));
         if (media.length) {
@@ -319,5 +369,6 @@
         if (subSubItemContent.length > 0) item.addEventListener("click", subSubMenuLinkClick); else item.classList.toggle("menu__link-close");
     }));
     window["FLS"] = false;
+    menuInit();
     tabs();
 })();
