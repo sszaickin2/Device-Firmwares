@@ -73,44 +73,6 @@
             }), duration);
         }
     };
-    let bodyLockStatus = true;
-    let bodyLockToggle = (delay = 500) => {
-        if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
-    };
-    let bodyUnlock = (delay = 500) => {
-        let body = document.querySelector("body");
-        if (bodyLockStatus) {
-            let lock_padding = document.querySelectorAll("[data-lp]");
-            setTimeout((() => {
-                for (let index = 0; index < lock_padding.length; index++) {
-                    const el = lock_padding[index];
-                    el.style.paddingRight = "0px";
-                }
-                body.style.paddingRight = "0px";
-                document.documentElement.classList.remove("lock");
-            }), delay);
-            bodyLockStatus = false;
-            setTimeout((function() {
-                bodyLockStatus = true;
-            }), delay);
-        }
-    };
-    let bodyLock = (delay = 500) => {
-        let body = document.querySelector("body");
-        if (bodyLockStatus) {
-            let lock_padding = document.querySelectorAll("[data-lp]");
-            for (let index = 0; index < lock_padding.length; index++) {
-                const el = lock_padding[index];
-                el.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-            }
-            body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-            document.documentElement.classList.add("lock");
-            bodyLockStatus = false;
-            setTimeout((function() {
-                bodyLockStatus = true;
-            }), delay);
-        }
-    };
     function tabs() {
         const tabs = document.querySelectorAll("[data-tabs]");
         let tabsActiveHash = [];
@@ -207,28 +169,6 @@
                 e.preventDefault();
             }
         }
-    }
-    function menuInit() {
-        if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
-            const menuButton = document.querySelectorAll(".menu__link");
-            const content = document.querySelectorAll(".sub-menu__list");
-            const menuItemBacground = document.querySelectorAll(".menu__item");
-            for (let i = 0; i < menuButton.length; i++) if (e.target == menuButton[i]) {
-                menuButton[i].classList.toggle("menu__link-active");
-                content[i].classList.toggle("sub-menu__open");
-                menuItemBacground[i].classList.toggle("menu__item-background");
-            }
-            const showButton = document.querySelectorAll(".sub-menu__link");
-            const contentShow = document.querySelectorAll(".sub-sub-menu__list");
-            for (let i = 0; i < showButton.length; i++) if (e.target == showButton[i]) {
-                showButton[i].classList.toggle("sub-menu__link-active");
-                contentShow[i].classList.toggle("sub-sub-menu__active");
-            }
-            if (bodyLockStatus && e.target.closest(".icon-menu")) {
-                bodyLockToggle();
-                document.documentElement.classList.toggle("menu-open");
-            }
-        }));
     }
     function uniqArray(array) {
         return array.filter((function(item, index, self) {
@@ -348,7 +288,36 @@
             }
         }));
     }
+    const menuItem = document.querySelectorAll(".menu__item");
+    const menuItemLink = document.querySelectorAll(".menu__link");
+    const subMenuLink = document.querySelectorAll(".sub-menu__link");
+    const subMenuItem = document.querySelectorAll(".sub-menu__item");
+    const subSubMenuLink = document.querySelectorAll(".sub-sub-menu__link");
+    const subSubMenuItem = document.querySelectorAll(".sub-sub-menu__item");
+    let menuItemLinkClick = function(event) {
+        const target = event.target;
+        for (let index = 0; index < menuItemLink.length; index++) if (target === menuItemLink[index]) menuItem[index].classList.toggle("menu__item-active");
+    };
+    menuItem.forEach((item => {
+        const itemContent = item.querySelectorAll(".sub-menu__list");
+        if (itemContent.length > 0) item.addEventListener("click", menuItemLinkClick); else item.classList.toggle("menu__link-close");
+    }));
+    let submenuLinkClick = function(event) {
+        const target = event.target;
+        for (let index = 0; index < subMenuLink.length; index++) if (target === subMenuLink[index]) subMenuItem[index].classList.toggle("sub-menu__item-active");
+    };
+    subMenuItem.forEach((el => {
+        const subItemContent = el.querySelectorAll(".sub-sub-menu__list");
+        if (subItemContent.length > 0) el.addEventListener("click", submenuLinkClick); else el.classList.toggle("menu__link-close");
+    }));
+    let subSubMenuLinkClick = function(event) {
+        const target = event.target;
+        for (let index = 0; index < subSubMenuLink.length; index++) if (target === subSubMenuLink[index]) subSubMenuItem[index].classList.toggle("sub-sub-menu__item-active");
+    };
+    subSubMenuItem.forEach((item => {
+        const subSubItemContent = item.querySelectorAll(".sub-sub-sub-menu__list");
+        if (subSubItemContent.length > 0) item.addEventListener("click", subSubMenuLinkClick); else item.classList.toggle("menu__link-close");
+    }));
     window["FLS"] = false;
-    menuInit();
     tabs();
 })();
