@@ -111,7 +111,6 @@
             }), delay);
         }
     };
-
     function tabs() {
         const tabs = document.querySelectorAll("[data-tabs]");
         let tabsActiveHash = [];
@@ -209,7 +208,6 @@
             }
         }
     }
-
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function (e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
@@ -218,13 +216,11 @@
             }
         }));
     }
-
     function uniqArray(array) {
         return array.filter((function (item, index, self) {
             return self.indexOf(item) === index;
         }));
     }
-
     function dataMediaQueries(array, dataSetValue) {
         const media = Array.from(array).filter((function (item, index, self) {
             if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
