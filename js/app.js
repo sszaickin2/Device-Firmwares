@@ -262,9 +262,10 @@
     const path = window.location.pathname;
     const page = path.split("/").pop();
     const menuLink = document.querySelectorAll(".menu__link");
+    console.log(page);
     for (let i = 0; i < menuLink.length; i++) {
         let menuId = menuLink[i].dataset.link;
-        if (menuId == page) menuLink[i].className += " menu__act";
+        if (page === menuId) menuLink[i].className += " menu__act";
     }
     const contentTabs = document.querySelectorAll(".body-tabs__content");
     if (contentTabs.length > 0) contentTabs.forEach((element => {

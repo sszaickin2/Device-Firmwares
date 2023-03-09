@@ -172,6 +172,13 @@ body {
   background-color: #ebebeb;
 }
 
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
 [class*=__container] {
   max-width: 89.8125rem;
   -webkit-box-sizing: content-box;
@@ -200,25 +207,25 @@ body {
 }
 
 .menu-button__container {
-  margin-top: 7.25rem;
+  margin-top: 4.4375rem;
   padding-bottom: 1.25rem;
 }
 
 .menu-button__title {
-  margin-top: 1.125rem;
+  margin-top: 1.75rem;
   line-height: 2.125rem;
   font-weight: 700;
 }
 
-@supports (font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem )) {
+@supports (font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem )) {
   .menu-button__title {
-    font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem );
+    font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem )) {
+@supports not (font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem )) {
   .menu-button__title {
-    font-size: calc(1.5625rem + 0.4375 * (100vw - 20rem) / 71.6875);
+    font-size: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 71.6875);
   }
 }
 
@@ -230,10 +237,6 @@ body {
   gap: 1.75rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.main-button__container {
-  margin-top: 4.375rem;
 }
 
 .content-button__block {
@@ -345,7 +348,7 @@ body {
 }
 
 .supported__container {
-  margin-top: 4.5rem;
+  margin-top: 4.4375rem;
 }
 
 .supported__back {
@@ -380,15 +383,15 @@ body {
   border-top: 1px solid #e3e3e3;
 }
 
-@supports (font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem )) {
+@supports (font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem )) {
   .supported__title {
-    font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem );
+    font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem );
   }
 }
 
-@supports not (font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem )) {
+@supports not (font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem )) {
   .supported__title {
-    font-size: calc(1.5625rem + 0.4375 * (100vw - 20rem) / 71.6875);
+    font-size: calc(0.9375rem + 1.0625 * (100vw - 20rem) / 71.6875);
   }
 }
 
