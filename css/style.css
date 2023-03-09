@@ -172,7 +172,6 @@ body {
   background-color: #ebebeb;
 }
 
-
 [class*=__container] {
   max-width: 89.8125rem;
   -webkit-box-sizing: content-box;
@@ -201,7 +200,7 @@ body {
 }
 
 .menu-button__container {
-  margin-top: 9.1875rem;
+  margin-top: 7.25rem;
   padding-bottom: 1.25rem;
 }
 
@@ -230,7 +229,11 @@ body {
   display: flex;
   gap: 1.75rem;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-button__container {
+  margin-top: 4.375rem;
 }
 
 .content-button__block {
@@ -342,7 +345,7 @@ body {
 }
 
 .supported__container {
-  margin-top: 8.125rem;
+  margin-top: 4.5rem;
 }
 
 .supported__back {
@@ -370,9 +373,11 @@ body {
 }
 
 .supported__title {
-  margin-top: 1.125rem;
+  padding-top: 1.875rem;
+  margin-top: 1.875rem;
   line-height: 2.125rem;
   font-weight: 700;
+  border-top: 1px solid #e3e3e3;
 }
 
 @supports (font-size: clamp( 1.5625rem , 1.4404424586rem  +  0.6102877071vw , 2rem )) {
@@ -1083,7 +1088,7 @@ body {
   position: absolute;
   bottom: 0;
   padding-left: 2.6875rem;
-  padding-bottom: 3.125rem;
+  padding-bottom: 1.25rem;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.1875rem;
@@ -1279,8 +1284,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.875rem;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1307,8 +1312,8 @@ body {
 .sub-menu__arrow-list {
   font-size: 0.6875rem;
   -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;

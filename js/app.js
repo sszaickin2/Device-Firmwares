@@ -90,7 +90,7 @@
                 document.documentElement.classList.remove("lock");
             }), delay);
             bodyLockStatus = false;
-            setTimeout((function () {
+            setTimeout((function() {
                 bodyLockStatus = true;
             }), delay);
         }
@@ -106,7 +106,7 @@
             body.style.paddingRight = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
             document.documentElement.classList.add("lock");
             bodyLockStatus = false;
-            setTimeout((function () {
+            setTimeout((function() {
                 bodyLockStatus = true;
             }), delay);
         }
@@ -209,7 +209,7 @@
         }
     }
     function menuInit() {
-        if (document.querySelector(".icon-menu")) document.addEventListener("click", (function (e) {
+        if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
@@ -217,12 +217,12 @@
         }));
     }
     function uniqArray(array) {
-        return array.filter((function (item, index, self) {
+        return array.filter((function(item, index, self) {
             return self.indexOf(item) === index;
         }));
     }
     function dataMediaQueries(array, dataSetValue) {
-        const media = Array.from(array).filter((function (item, index, self) {
+        const media = Array.from(array).filter((function(item, index, self) {
             if (item.dataset[dataSetValue]) return item.dataset[dataSetValue].split(",")[0];
         }));
         if (media.length) {
@@ -261,17 +261,7 @@
     }
     const path = window.location.pathname;
     const page = path.split("/").pop();
-    const menuHidden = document.querySelector(".menu__body");
-    const menuIco = document.querySelector(".menu__icon");
     const menuLink = document.querySelectorAll(".menu__link");
-    const dataMenu = document.querySelector("[data-menu-lock]");
-    if (dataMenu) {
-        menuHidden.hidden = true;
-        menuIco.style.display = "none";
-    } else {
-        menuHidden.hidden = false;
-        menuIco.style.display = "block";
-    }
     for (let i = 0; i < menuLink.length; i++) {
         let menuId = menuLink[i].dataset.link;
         if (menuId == page) menuLink[i].className += " menu__act";
@@ -346,7 +336,10 @@
     };
     menuItem.forEach((item => {
         const itemContent = item.querySelectorAll(".sub-menu__list");
-        if (itemContent.length > 0) item.addEventListener("click", menuItemLinkClick); else item.classList.toggle("menu__link-close");
+        if (itemContent.length > 0) item.addEventListener("click", menuItemLinkClick); else {
+            item.classList.toggle("menu__link-close");
+            item.classList.remove("menu__item-active");
+        }
     }));
     let submenuLinkClick = function(event) {
         const target = event.target;
