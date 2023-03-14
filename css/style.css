@@ -172,13 +172,6 @@ body {
   background-color: #ebebeb;
 }
 
-/*
-(i) Стили будут применяться ко 
-всем классам содержащим *__container
-Например header__container, main__container и т.д.
-Снипет (HTML): cnt
-*/
-
 [class*=__container] {
   max-width: 89.8125rem;
   -webkit-box-sizing: content-box;
@@ -207,7 +200,7 @@ body {
 }
 
 .menu-button__container {
-  margin-top: 4.4375rem;
+  padding-top: 5rem;
   padding-bottom: 1.25rem;
 }
 
@@ -217,15 +210,15 @@ body {
   font-weight: 700;
 }
 
-@supports (font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem )) {
+@supports (font-size: clamp( 1.875rem , 1.7006320837rem  +  0.8718395815vw , 2.5rem )) {
   .menu-button__title {
-    font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem );
+    font-size: clamp( 1.875rem , 1.7006320837rem  +  0.8718395815vw , 2.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.5625rem , 1.3009481255rem  +  1.3077593723vw , 2.5rem )) {
+@supports not (font-size: clamp( 1.875rem , 1.7006320837rem  +  0.8718395815vw , 2.5rem )) {
   .menu-button__title {
-    font-size: calc(1.5625rem + 0.9375 * (100vw - 20rem) / 71.6875);
+    font-size: calc(1.875rem + 0.625 * (100vw - 20rem) / 71.6875);
   }
 }
 
@@ -348,7 +341,7 @@ body {
 }
 
 .supported__container {
-  margin-top: 4.4375rem;
+  padding-top: 4.4375rem;
 }
 
 .supported__back {
@@ -381,18 +374,26 @@ body {
   line-height: 2.125rem;
   font-weight: 700;
   border-top: 1px solid #e3e3e3;
+  color: #1dbc9b;
 }
 
-@supports (font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem )) {
+@supports (font-size: clamp( 1.5625rem , 1.4055688753rem  +  0.7846556234vw , 2.125rem )) {
   .supported__title {
-    font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem );
+    font-size: clamp( 1.5625rem , 1.4055688753rem  +  0.7846556234vw , 2.125rem );
   }
 }
 
-@supports not (font-size: clamp( 0.9375rem , 0.6410745423rem  +  1.4821272886vw , 2rem )) {
+@supports not (font-size: clamp( 1.5625rem , 1.4055688753rem  +  0.7846556234vw , 2.125rem )) {
   .supported__title {
-    font-size: calc(0.9375rem + 1.0625 * (100vw - 20rem) / 71.6875);
+    font-size: calc(1.5625rem + 0.5625 * (100vw - 20rem) / 71.6875);
   }
+}
+
+.supported__text--min {
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.1875rem;
 }
 
 .supported__list {
@@ -1256,6 +1257,7 @@ body {
 
 .menu-open .header__menu {
   height: 100%;
+  overflow: scroll;
 }
 
 .menu-open .menu__body {
@@ -1580,6 +1582,18 @@ body {
   }
 }
 
+@media (max-width: 47.9375em) {
+  .supported__container {
+    padding-top: 6.875rem;
+  }
+
+  .header__title {
+    padding-bottom: 0.9375rem;
+    margin-left: 1.5625rem;
+    margin-right: 1.5625rem;
+  }
+}
+
 @media (max-width: 47.99875em) {
   .body-tabs__content-hidden {
     width: 100%;
@@ -1588,7 +1602,6 @@ body {
   .header__menu {
     position: fixed;
     width: 100%;
-    overflow: scroll;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -1697,14 +1710,6 @@ body {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-  }
-}
-
-@media (max-width: 47.9375em) {
-  .header__title {
-    padding-bottom: 0.9375rem;
-    margin-left: 1.5625rem;
-    margin-right: 1.5625rem;
   }
 }
 
