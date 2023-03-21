@@ -262,7 +262,6 @@
     const path = window.location.pathname;
     const page = path.split("/").pop();
     const menuLink = document.querySelectorAll(".menu__link");
-    console.log(page);
     for (let i = 0; i < menuLink.length; i++) {
         let menuId = menuLink[i].dataset.link;
         if (page === menuId) menuLink[i].className += " menu__act";
