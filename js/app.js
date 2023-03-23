@@ -259,16 +259,6 @@
             }
         }
     }
-    function highlightActiveMenuItem() {
-        const currentUrl = window.location.href;
-        const menuLinks = document.querySelectorAll("#menu a");
-        menuLinks.forEach((link => {
-            const linkUrl = link.href;
-            if (currentUrl.includes(linkUrl)) link.parentNode.classList.add("active"); else link.parentNode.classList.remove("active");
-        }));
-    }
-    window.addEventListener("load", highlightActiveMenuItem);
-    window.addEventListener("hashchange", highlightActiveMenuItem);
     const contentTabs = document.querySelectorAll(".body-tabs__content");
     if (contentTabs.length > 0) contentTabs.forEach((element => {
         element.addEventListener("click", (event => {

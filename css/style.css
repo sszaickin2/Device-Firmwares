@@ -172,6 +172,7 @@ body {
   background-color: #ebebeb;
 }
 
+
 [class*=__container] {
   max-width: 89.8125rem;
   -webkit-box-sizing: content-box;
@@ -1274,11 +1275,6 @@ body {
   font-size: 1.5rem;
 }
 
-.active {
-  color: #1dbc9b;
-  font-weight: bold;
-}
-
 .menu-open .header__menu {
   height: 100%;
   overflow: scroll;
@@ -1302,10 +1298,6 @@ body {
   visibility: hidden;
   opacity: 0;
   max-height: 0;
-}
-
-.sub-menu__item:last-child {
-  padding-bottom: 1.25rem;
 }
 
 .sub-menu__link {
@@ -1505,6 +1497,16 @@ body {
   .sub-sub-sub-menu__link {
     padding-left: calc(0.0000000625rem + 9.9999999375 * (100vw - 20rem) / 71.6875);
   }
+}
+
+.active {
+  color: #1dbc9b;
+  font-weight: bold;
+}
+
+.active .sub-sub-sub-menu__link {
+  color: #1dbc9b;
+  font-weight: bold;
 }
 
 .icon-menu {
