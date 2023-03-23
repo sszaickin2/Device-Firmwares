@@ -325,10 +325,10 @@
         }));
     }
     const menuItem = document.querySelectorAll(".menu__item");
-    const menuItemLink = document.querySelectorAll(".menu__link");
-    const subMenuLink = document.querySelectorAll(".sub-menu__link");
+    const menuItemLink = document.querySelectorAll(".menu__arrow");
+    const subMenuLink = document.querySelectorAll(".sub-menu__arrow-list");
     const subMenuItem = document.querySelectorAll(".sub-menu__item");
-    const subSubMenuLink = document.querySelectorAll(".sub-sub-menu__link");
+    const subSubMenuLink = document.querySelectorAll(".sub-sub-menu__arrow-list");
     const subSubMenuItem = document.querySelectorAll(".sub-sub-menu__item");
     let menuItemLinkClick = function(event) {
         const target = event.target;
