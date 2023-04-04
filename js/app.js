@@ -318,34 +318,30 @@
         }));
     }
     const menuItem = document.querySelectorAll(".menu__item");
-    const menuItemLink = document.querySelectorAll(".menu__arrow");
+    document.querySelectorAll(".menu__arrow");
     const subMenuLink = document.querySelectorAll(".sub-menu__arrow-list");
     const subMenuItem = document.querySelectorAll(".sub-menu__item");
     const subSubMenuLink = document.querySelectorAll(".sub-sub-menu__arrow-list");
     const subSubMenuItem = document.querySelectorAll(".sub-sub-menu__item");
-    let menuItemLinkClick = function(event) {
-        const target = event.target;
-        for (let index = 0; index < menuItemLink.length; index++) if (target === menuItemLink[index]) menuItem[index].classList.toggle("menu__item-active");
-    };
-    menuItem.forEach((item => {
-        const itemContent = item.querySelectorAll(".sub-menu__list");
-        if (itemContent.length > 0) item.addEventListener("click", menuItemLinkClick); else {
-            item.classList.toggle("menu__link-close");
-            item.classList.remove("menu__item-active");
-        }
-    }));
     let submenuLinkClick = function(event) {
         const target = event.target;
         for (let index = 0; index < subMenuLink.length; index++) if (target === subMenuLink[index]) subMenuItem[index].classList.toggle("sub-menu__item-active");
     };
-    subMenuItem.forEach((el => {
-        const subItemContent = el.querySelectorAll(".sub-sub-menu__list");
-        if (subItemContent.length > 0) el.addEventListener("click", submenuLinkClick); else el.classList.toggle("menu__link-close");
-    }));
     let subSubMenuLinkClick = function(event) {
         const target = event.target;
         for (let index = 0; index < subSubMenuLink.length; index++) if (target === subSubMenuLink[index]) subSubMenuItem[index].classList.toggle("sub-sub-menu__item-active");
     };
+    menuItem.forEach((item => {
+        const itemContent = item.querySelectorAll(".sub-menu__list");
+        if (itemContent.length > 0) ; else {
+            item.classList.toggle("menu__link-close");
+            item.classList.remove("menu__item-active");
+        }
+    }));
+    subMenuItem.forEach((el => {
+        const subItemContent = el.querySelectorAll(".sub-sub-menu__list");
+        if (subItemContent.length > 0) el.addEventListener("click", submenuLinkClick); else el.classList.toggle("menu__link-close");
+    }));
     subSubMenuItem.forEach((item => {
         const subSubItemContent = item.querySelectorAll(".sub-sub-sub-menu__list");
         if (subSubItemContent.length > 0) item.addEventListener("click", subSubMenuLinkClick); else item.classList.toggle("menu__link-close");
