@@ -976,6 +976,7 @@ body {
   font-size: 0.875rem;
   line-height: 1.0625rem;
   text-transform: uppercase;
+  width: 8.125rem;
 }
 
 .body-tabs__button-size {
@@ -1593,6 +1594,10 @@ body {
 
   .supported__container {
     padding-top: 6.875rem;
+  }
+
+  .body-tabs__button-head {
+    width: 100%;
   }
 
   .header {
